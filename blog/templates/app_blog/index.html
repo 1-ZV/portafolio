@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'app_portafolio/layout.html' %}
+    {% load static %}
+    {% block content %}
+    {% for p in posts %}
+    <div class="p-4">
+        <div class="card card-body bg-black">
+            <div class="col-4">
+                <a href="{% url 'blog:post_detail' p.id %}">
+                    <img src="{{p.image.url}}" alt="{{p.title}}" class="img-fluid">
+                </a>
+            </div>
+                <div class="">
+                    <h2>{{p.title}}</h2>
+                    <p>{{p.description|truncatechars:115}}</p>
+                    <p>{{p.date|date:'d M Y'}}</p>
+                </div>
+        </div>    
+    </div>
+    {%endfor%}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% extends 'app_portafolio/layout.html' %}
+    {% load static %}
+    {% block content %}
+    <header class="row bg-black">
+        <div class="col-md-4"> <img src="{% static 'portafolio/Carrera.jpeg' %}" width="300"></div>
+        <div class="col md-8 my-auto">
+            <h1><strong>Juan Zabaleta Vásquez</strong></h1>
+            <h2>Programmer Backend Junior</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam incidunt dolores rerum sint rem ut magni
+                labore alias eveniet autem ipsum, optio qui eius eaque saepe repudiandae aliquid iure accusantium?</p>
+        </div>
+    </header>
+
+    <div class="row my-4 text-center">
+        <h1>My projects</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cumque iusto voluptas unde deserunt,
+            reiciendis cum blanditiis molestiae, odio, harum nihil dolorem nobis eligendi? Dolore repudiandae sapiente</p>
+        {% for p in projects %}
+        <div class="col-md-4 p-4">
+            <div class="card bg-black card-project">
+                <img src="{{p.image.url}}" alt="{{p.title}}" class="card-img-top">
+                <div class="card-body">
+                    <h2>{{p.title}}</h2>
+                    {% if p.url %}
+                    <a href="{{p.url}}" class="btn btn-primary border-bottom border-primary rounded-0 btn-sm" target="_blank">LINK</a>
+                    {%endif%}
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+{% load static %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Django Portafolio</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body class="text-light d-flex flex-column min-vh-100">
+    {% include 'app_portafolio/partials/navbar.html' %}
+    <div class="container p4 flex-grow-1">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer>
+        <div class="container text-center text-md-start bg-black">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <h5 class="text-uppercase fw-bold mb-2">Mi Portafolio</h5>
+                <p class="small text-light mb-0 ">&copy; 2026 J.Z. Todos los derechos reservados.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <h5 class="text-uppercase fw-bold mb-3">Contacto</h5>
+                <p class="mb-2">
+                    <i class="bi bi-envelope-fill me-2 text-primary"></i>
+                    <a href="mailto:tu-correo@email.com" class="text-light text-decoration-none hover-link">
+                        email
+                    </a>
+                </p>
+                
+                <p class="mb-0">
+                    <i class="bi bi-telephone-fill me-2 text-success"></i>
+                    <a href="https://wa.me/573000000000" target="_blank" class="text-light text-decoration-none">
+                        Phone
+                    </a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+    </footer>
+</body>
+</html>

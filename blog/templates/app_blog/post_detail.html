@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'app_portafolio/layout.html' %}
+    {% load static %}
+    {% block content %}
+    <div class="text-center">
+        <h2>{{post.title|safe}}</h2>
+        <h3 class="my-2 h5 text-light">{{post.date|date:'F jS Y'}}</h3>
+        <img src="{{post.image.url}}" alt="{{p.title}}">
+        <div class="my-4 text-start" style="text-align: justify; text-justify: inter-word; overflow-wrap: break-word; word-break: break-word;">
+            <p>{{post.description}}</p>
+        </div>
+    </div>
+    <a href="{% url 'blog:posts' %}" class="btn btn-primary">Back</a>
+    {% endblock %}
+</body>
+</html>
