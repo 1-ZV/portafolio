@@ -6,7 +6,7 @@ Portafolio desarrollada con Django + SQLite.
 
 ### Inicio
 ![Inicio](screenshots/home_1.PNG) 
-(screenshots/home_2.PNG)
+!(screenshots/home_2.PNG)
 
 
 ### Crear post
