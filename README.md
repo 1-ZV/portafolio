@@ -5,8 +5,9 @@ Portafolio desarrollada con Django + SQLite.
 ## Capturas
 
 ### Inicio
-![Inicio](screenshots/home_1.png) (screenshots/home_2.png)
+![Inicio](screenshots/home_1.PNG) 
+(screenshots/home_2.PNG)
 
 
 ### Crear post
-![Crear post](screenshots/blogs.png)
+![Crear post](screenshots/blogs.PNG)
